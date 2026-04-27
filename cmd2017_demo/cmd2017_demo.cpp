@@ -1,6 +1,8 @@
 ﻿// cmd2017_demo.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
+#pragma execution_character_set("utf-8")
+
 #include <iostream>
 #include <winsock2.h>
 #include <ws2tcpip.h>
