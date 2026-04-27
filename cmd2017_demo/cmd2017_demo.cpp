@@ -487,8 +487,10 @@ void sendWebSocketMessage(SOCKET socket, const std::string& message) {
 
 std::string getCurrentTimestamp() {
     time_t now = time(nullptr);
+    struct tm timeinfo;
     char buf[32];
-    strftime(buf, sizeof(buf), "%Y-%m-%dT%H:%M:%S", localtime(&now));
+    localtime_s(&timeinfo, &now);
+    strftime(buf, sizeof(buf), "%Y-%m-%dT%H:%M:%S", &timeinfo);
     return std::string(buf);
 }
 
